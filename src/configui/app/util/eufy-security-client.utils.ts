@@ -29,6 +29,7 @@ export enum DeviceType {
   INDOOR_OUTDOOR_CAMERA_1080P_NO_LIGHT = 44,
   INDOOR_OUTDOOR_CAMERA_2K = 45,
   INDOOR_OUTDOOR_CAMERA_1080P = 46,
+  OUTDOOR_PT_CAMERA = 48,
   LOCK_BLE = 50,
   LOCK_WIFI = 51,
   LOCK_BLE_NO_FINGER = 52,
@@ -44,6 +45,7 @@ export enum DeviceType {
   SMART_DROP = 90,
   BATTERY_DOORBELL_PLUS = 91,
   DOORBELL_SOLO = 93,
+  BATTERY_DOORBELL_PLUS_E340 = 94,
   INDOOR_COST_DOWN_CAMERA = 100,
   CAMERA_GUN = 101,
   CAMERA_SNAIL = 102,
@@ -70,6 +72,7 @@ export class Device {
       type === DeviceType.BATTERY_DOORBELL ||
       type === DeviceType.BATTERY_DOORBELL_2 ||
       type === DeviceType.BATTERY_DOORBELL_PLUS ||
+      type === DeviceType.BATTERY_DOORBELL_PLUS_E340 ||
       type === DeviceType.DOORBELL_SOLO
     ) {
       return true;
@@ -106,6 +109,7 @@ export class Device {
       type === DeviceType.INDOOR_OUTDOOR_CAMERA_1080P_NO_LIGHT ||
       type === DeviceType.INDOOR_OUTDOOR_CAMERA_2K ||
       type === DeviceType.INDOOR_COST_DOWN_CAMERA ||
+      type === DeviceType.OUTDOOR_PT_CAMERA ||
       type === DeviceType.FLOODLIGHT_CAMERA_8422 ||
       type === DeviceType.FLOODLIGHT_CAMERA_8423 ||
       type === DeviceType.FLOODLIGHT_CAMERA_8424 ||
@@ -124,7 +128,8 @@ export class Device {
   static isBatteryDoorbell(type: number): boolean {
     if (type === DeviceType.BATTERY_DOORBELL ||
       type === DeviceType.BATTERY_DOORBELL_2 ||
-      type === DeviceType.BATTERY_DOORBELL_PLUS
+      type === DeviceType.BATTERY_DOORBELL_PLUS ||
+      type === DeviceType.BATTERY_DOORBELL_PLUS_E340
     ) {
       return true;
     }
@@ -175,6 +180,7 @@ export class Device {
       type === DeviceType.BATTERY_DOORBELL ||
       type === DeviceType.BATTERY_DOORBELL_2 ||
       type === DeviceType.BATTERY_DOORBELL_PLUS ||
+      type === DeviceType.BATTERY_DOORBELL_PLUS_E340 ||
       type === DeviceType.DOORBELL_SOLO ||
       type === DeviceType.INDOOR_CAMERA ||
       type === DeviceType.INDOOR_CAMERA_1080 ||
@@ -184,6 +190,7 @@ export class Device {
       type === DeviceType.INDOOR_PT_CAMERA ||
       type === DeviceType.INDOOR_PT_CAMERA_1080 ||
       type === DeviceType.INDOOR_COST_DOWN_CAMERA ||
+      type === DeviceType.OUTDOOR_PT_CAMERA ||
       type === DeviceType.SOLO_CAMERA ||
       type === DeviceType.SOLO_CAMERA_PRO ||
       type === DeviceType.SOLO_CAMERA_SPOTLIGHT_1080 ||
