@@ -4,8 +4,8 @@ import { EufySecurityPlatform } from '../platform';
 import { DeviceAccessory } from './Device';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore  
-import { Camera, Device, DeviceEvents, PropertyName, CommandName } from 'eufy-security-client';
+// @ts-ignore
+import { Camera, Device, DeviceEvents, PropertyName, CommandName } from '@spectralblu/eufy-security-client';
 import { StreamingDelegate } from '../controller/streamingDelegate';
 
 import { CameraConfig, VideoConfig } from '../utils/configTypes';
@@ -344,7 +344,7 @@ export class CameraAccessory extends DeviceAccessory {
         return value === 1;
       }
 
-      // Override for PropertyName.DeviceEnabled when enabled button is fired and 
+      // Override for PropertyName.DeviceEnabled when enabled button is fired and
       if (
         propertyName === PropertyName.DeviceEnabled &&
         Date.now() - this.cameraStatus.timestamp <= 60000

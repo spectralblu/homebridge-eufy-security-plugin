@@ -1,6 +1,6 @@
 import { EventEmitter, Readable } from 'stream';
 
-import { Station, Device, StreamMetadata, Camera } from 'eufy-security-client';
+import { Station, Device, StreamMetadata, Camera } from '@spectralblu/eufy-security-client';
 
 import { EufySecurityPlatform } from '../platform';
 import { Logger as TsLogger, ILogObj } from 'tslog';
@@ -145,7 +145,7 @@ type ProxyStream = {
 };
 
 export class LocalLivestreamManager extends EventEmitter {
-  
+
   private readonly SECONDS_UNTIL_TERMINATION_AFTER_LAST_USED = 45;
   private readonly CONNECTION_ESTABLISHED_TIMEOUT = 5;
 
@@ -164,11 +164,11 @@ export class LocalLivestreamManager extends EventEmitter {
 
   private livestreamStartedAt: number | null;
   private livestreamIsStarting = false;
-  
+
   private readonly platform: EufySecurityPlatform;
   private readonly device: Camera;
-  
-  constructor(platform: EufySecurityPlatform, device: Camera, cacheEnabled: boolean, log: TsLogger<ILogObj>) {    
+
+  constructor(platform: EufySecurityPlatform, device: Camera, cacheEnabled: boolean, log: TsLogger<ILogObj>) {
     super();
 
     this.log = log;
@@ -227,7 +227,7 @@ export class LocalLivestreamManager extends EventEmitter {
       return await this.startAndGetLocalLiveStream();
     }
   }
-  
+
   private async startAndGetLocalLiveStream(): Promise<ProxyStream> {
     return new Promise((resolve, reject) => {
       this.log.debug(this.device.getName(), 'Start new station livestream (P2P Session)...');
@@ -335,7 +335,7 @@ export class LocalLivestreamManager extends EventEmitter {
         this.stopLocalLiveStream();
       });
 
-      audiostream.on('data', (data) => {       
+      audiostream.on('data', (data) => {
         this.proxyStreams.forEach((proxyStream) => {
           proxyStream.audiostream.newAudioData(data);
         });
@@ -356,7 +356,7 @@ export class LocalLivestreamManager extends EventEmitter {
       const createdAt = Date.now();
       this.stationStream = {station, device, metadata, videostream, audiostream, createdAt};
       this.log.debug(this.device.getName(), 'Stream metadata: ' + JSON.stringify(this.stationStream.metadata));
-      
+
       this.emit('livestream start');
     }
   }

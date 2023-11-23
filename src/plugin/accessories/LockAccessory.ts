@@ -3,8 +3,8 @@ import { EufySecurityPlatform } from '../platform';
 import { DeviceAccessory } from './Device';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore  
-import { Lock, PropertyName } from 'eufy-security-client';
+// @ts-ignore
+import { Lock, PropertyName } from '@spectralblu/eufy-security-client';
 
 /**
  * Platform Accessory
@@ -110,7 +110,7 @@ export class LockAccessory extends DeviceAccessory {
       await this.setPropertyValue(PropertyName.DeviceLocked, !!state);
     } catch (error) {
       this.platform.log.error(`${this.accessory.displayName} Lock target state
-      (${JSON.stringify(typeof state)} / ${JSON.stringify(state)}) 
+      (${JSON.stringify(typeof state)} / ${JSON.stringify(state)})
       could not be set: ${error}`);
     }
   }

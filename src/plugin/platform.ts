@@ -35,7 +35,7 @@ import {
   libVersion,
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-} from 'eufy-security-client';
+} from '@spectralblu/eufy-security-client';
 
 import { Logger as TsLogger, ILogObj } from 'tslog';
 import { createStream } from 'rotating-file-stream';

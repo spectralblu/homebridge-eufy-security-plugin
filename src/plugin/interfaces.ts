@@ -1,4 +1,4 @@
-import { Station, Device } from 'eufy-security-client';
+import { Station, Device } from '@spectralblu/eufy-security-client';
 
 export interface DeviceIdentifier {
     uniqueId: string;

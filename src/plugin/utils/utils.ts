@@ -1,4 +1,4 @@
-import { Camera, PropertyName } from 'eufy-security-client';
+import { Camera, PropertyName } from '@spectralblu/eufy-security-client';
 
 import { CameraConfig } from './configTypes';
 import { Logger as TsLogger, ILogObj } from 'tslog';

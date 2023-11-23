@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-import { EufySecurity, EufySecurityConfig, libVersion, Device, Station } from 'eufy-security-client';
+import { EufySecurity, EufySecurityConfig, libVersion, Device, Station } from '@spectralblu/eufy-security-client';
 import { HomebridgePluginUiServer } from '@homebridge/plugin-ui-utils';
 
 import fs from 'fs';
@@ -377,7 +377,7 @@ class UiServer extends HomebridgePluginUiServer {
         this.log.error('Error while generating log files: ' + err);
         reject(err);
       }).finally(() => this.removeCompressedLogs());
-      
+
     });
   }
 

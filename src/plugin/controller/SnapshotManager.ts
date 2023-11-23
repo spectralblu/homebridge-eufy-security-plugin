@@ -1,6 +1,6 @@
 import { EventEmitter, Readable } from 'stream';
 
-import { Camera, Device, Picture, PropertyName, PropertyValue } from 'eufy-security-client';
+import { Camera, Device, Picture, PropertyName, PropertyValue } from '@spectralblu/eufy-security-client';
 import ffmpegPath from 'ffmpeg-for-homebridge';
 
 import { CameraConfig } from '../utils/configTypes';
@@ -39,11 +39,11 @@ type StreamSource = {
  *      if request takes too long old snapshot will be returned
  * 3. get an old snapshot immediately -> !forceRefreshSnapshot
  *    - wait on cloud snapshot with new events
- * 
+ *
  * extra options:
  *  - force refresh snapshots with interval
  *  - force immediate snapshot-reject when ringing
- * 
+ *
  * Drawbacks: elapsed time in homekit might be wrong
  */
 

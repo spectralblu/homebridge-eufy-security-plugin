@@ -27,7 +27,7 @@ import { CameraConfig, VideoConfig } from '../utils/configTypes';
 import { FFmpeg, FFmpegParameters } from '../utils/ffmpeg';
 import { Logger as TsLogger, ILogObj } from 'tslog';
 
-import { Camera, PropertyName } from 'eufy-security-client';
+import { Camera, PropertyName } from '@spectralblu/eufy-security-client';
 import { EufySecurityPlatform } from '../platform';
 
 import { LocalLivestreamManager } from './LocalLivestreamManager';
@@ -277,7 +277,7 @@ export class StreamingDelegate implements CameraStreamingDelegate {
       const useAudio = (request.audio.codec === AudioStreamingCodecType.OPUS
                       || request.audio.codec === AudioStreamingCodecType.AAC_ELD)
                       && this.videoConfig.audio;
-      
+
       if (!useAudio && this.videoConfig.audio) {
         this.log.warn(this.cameraName, `An unsupported audio codec (type: ${request.audio.codec}) was requested. Audio streaming will be omitted.`);
       }
@@ -358,7 +358,7 @@ export class StreamingDelegate implements CameraStreamingDelegate {
         activeSession.returnProcess.start();
         activeSession.returnProcess.stdout?.pipe(activeSession.talkbackStream);
       }
-    
+
       // Check if the pendingSession has been stopped before it was successfully started.
       const pendingSession = this.pendingSessions.get(request.sessionID);
       // pendingSession has not been deleted. Transfer it to ongoingSessions.

@@ -3,8 +3,8 @@ import { EufySecurityPlatform } from '../platform';
 import { DeviceAccessory } from './Device';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore  
-import { MotionSensor, PropertyName } from 'eufy-security-client';
+// @ts-ignore
+import { MotionSensor, PropertyName } from '@spectralblu/eufy-security-client';
 
 /**
  * Platform Accessory

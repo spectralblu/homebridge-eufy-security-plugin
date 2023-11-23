@@ -6,7 +6,7 @@ import {
   WithUUID,
 } from 'homebridge';
 import { EufySecurityPlatform } from '../platform';
-import { DeviceType, DeviceEvents, PropertyValue, Device, Station, StationEvents, PropertyName } from 'eufy-security-client';
+import { DeviceType, DeviceEvents, PropertyValue, Device, Station, StationEvents, PropertyName } from '@spectralblu/eufy-security-client';
 import { EventEmitter } from 'events';
 
 function isServiceInstance(
@@ -132,7 +132,7 @@ export abstract class BaseAccessory extends EventEmitter {
 
     // eslint-disable-next-line max-len
     this.platform.log.debug(`${this.accessory.displayName} REGISTER CHARACTERISTIC '${serviceType.name} (${service.UUID}) / ${characteristic.displayName} (${characteristic.UUID})`);
-    
+
     if (getValue) {
       characteristic.onGet(async (data) => {
         const value = getValue(data, characteristic, service);
@@ -144,12 +144,12 @@ export abstract class BaseAccessory extends EventEmitter {
     if (setValue && setValueDebounceTime) {
 
       let timeoutId: NodeJS.Timeout | null = null;
-      
+
       characteristic.onSet(async (value: CharacteristicValue) => {
         if (timeoutId) {
           clearTimeout(timeoutId);
         }
-      
+
         timeoutId = setTimeout(() => {
           timeoutId = null;
           setValue(value, characteristic, service);

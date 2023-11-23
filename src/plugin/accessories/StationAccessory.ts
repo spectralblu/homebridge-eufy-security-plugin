@@ -3,8 +3,8 @@ import { Characteristic, PlatformAccessory, CharacteristicValue } from 'homebrid
 import { EufySecurityPlatform } from '../platform';
 import { BaseAccessory } from './BaseAccessory';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore  
-import { Station, DeviceType, PropertyName, PropertyValue, AlarmEvent, GuardMode } from 'eufy-security-client';
+// @ts-ignore
+import { Station, DeviceType, PropertyName, PropertyValue, AlarmEvent, GuardMode } from '@spectralblu/eufy-security-client';
 import { StationConfig } from '../utils/configTypes';
 
 export enum HKGuardMode {
@@ -148,7 +148,7 @@ export class StationAccessory extends BaseAccessory {
    * Gets the station configuration based on several possible sources.
    * Priority is given to custom configurations (if available), then falls back to global configs,
    * and lastly uses default values if neither custom nor global configs are set.
-   * 
+   *
    * @returns {StationConfig} The final configuration settings for the station
    */
   private getStationConfig() {
@@ -176,7 +176,7 @@ export class StationAccessory extends BaseAccessory {
     };
 
     // Log the manual trigger modes for debugging purposes
-    this.platform.log.debug(`${this.accessory.displayName} 
+    this.platform.log.debug(`${this.accessory.displayName}
     manual alarm will be triggered only in these hk modes:
      ${config.manualTriggerModes}`);
 
@@ -270,7 +270,7 @@ export class StationAccessory extends BaseAccessory {
    * Convert a HomeKit mode number to its corresponding Eufy mode number.
    * Searches the `this.modes` array to find a matching HomeKit mode.
    * Throws an error if a matching mode is not found.
-   * 
+   *
    * @param {number} hkMode - The HomeKit mode to convert
    * @returns {number} The corresponding Eufy mode
    * @throws {Error} If a matching mode is not found
@@ -287,7 +287,7 @@ export class StationAccessory extends BaseAccessory {
    * Convert a Eufy mode number to its corresponding HomeKit mode number.
    * Searches the `this.modes` array to find a matching Eufy mode.
    * Throws an error if a matching mode is not found.
-   * 
+   *
    * @param {number} eufyMode - The Eufy mode to convert
    * @returns {number} The corresponding HomeKit mode
    * @throws {Error} If a matching mode is not found
@@ -339,7 +339,7 @@ export class StationAccessory extends BaseAccessory {
       const mode = this.convertHKtoEufy(value as number);
 
       if (isNaN(mode)) {
-        throw new Error(`${this.accessory.displayName}: 
+        throw new Error(`${this.accessory.displayName}:
         Could not convert guard mode value to valid number. Aborting guard mode change...'`);
       }
 
