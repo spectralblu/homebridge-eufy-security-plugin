@@ -1,7 +1,7 @@
 {
   "displayName": "Homebridge Eufy Security",
   "name": "@spectralblu/homebridge-eufy-security",
-  "version": "2.2.21-dualcams-03",
+  "version": "2.2.21-dualcams-04",
   "description": "Control Eufy Security from homebridge. Forked from homebridge-eufy-security/plugin",
   "license": "Apache-2.0",
   "repository": {
