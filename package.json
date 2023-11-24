@@ -1,12 +1,12 @@
 {
   "displayName": "Homebridge Eufy Security",
   "name": "@spectralblu/homebridge-eufy-security",
-  "version": "2.2.21-dualcams",
-  "description": "Control Eufy Security from homebridge.",
+  "version": "2.2.21-dualcams-03",
+  "description": "Control Eufy Security from homebridge. Forked from homebridge-eufy-security/plugin",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/homebridge-eufy-security/plugin.git"
+    "url": "git://github.com/spectralblu/homebridge-eufy-security-plugin.git"
   },
   "funding": [
     {
@@ -15,7 +15,7 @@
     }
   ],
   "bugs": {
-    "url": "https://github.com/homebridge-eufy-security/plugin/issues"
+    "url": "https://github.com/spectralblu/homebridge-eufy-security-plugin/issues"
   },
   "engines": {
     "node": ">=18.15.0",
@@ -43,7 +43,7 @@
   ],
   "dependencies": {
     "@homebridge/plugin-ui-utils": "^0.1.1",
-    "@spectralblu/eufy-security-client": "2.9.1-dualcams",
+    "@spectralblu/eufy-security-client": "2.9.1-dualcams-01",
     "ffmpeg-for-homebridge": "2.1.0",
     "pick-port": "^1.0.1",
     "rotating-file-stream": "^3.1.1",
@@ -97,6 +97,6 @@
       "ban-ts-comment": 0
     }
   },
-  "homepage": "https://github.com/homebridge-eufy-security/plugin/wiki",
+  "homepage": "https://github.com/spectralblu/homebridge-eufy-security-plugin/wiki",
   "author": "homebridge-eufy-security"
 }
